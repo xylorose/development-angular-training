@@ -1,0 +1,94 @@
+<!-- sample code -->
+<!-- <h1>{{title}}</h1>
+<app-inline></app-inline>
+<button [disabled] = "isActive" (click) ="sayHi()" > Button </button>
+<input type="text" [(ngModel)]= "name">
+
+<h4>{{name}}</h4>
+
+<img [src]="itemImageUrl"><br><br> -->
+
+<!-- Notice the colSpan property is camel case -->
+<!-- <br><br>
+<tr><td [colSpan]="5 + 1">Three-Four</td></tr>
+
+<p [ngClass]="classes"> ngClass shows some sign</p> -->
+<!-- 
+<input type="text" [(ngModel)] ="name"><br><br>
+<button (click)="compareInput()">Submit</button>
+
+<button [disabled] ="name === ''" (click) = "resetBtn()">Reset</button>
+
+<h4>{{defaultName}}</h4> -->
+
+<!-- <h1>{{title}}</h1>
+<img [src]="itemImageUrl"><br><br>
+<h2>Full Name: {{fullName}}</h2>-->
+
+<!--form style getting of fullname and age-->
+<!-- <h1>{{title}}</h1>
+<h4>First Name :  </h4>
+<input type="text" [(ngModel)] = "firstNameA">
+<h4>Last Name : </h4>
+<input type="text" [(ngModel)]= "lastNameA">
+<h4>Age: </h4>
+<input type="text" [(ngModel)]= "ageA">
+<app-another
+    [firstNameAN] = "firstNameA"
+    [lastNameAN] = "lastNameA"
+    [ageAN] = "ageA"
+    (fullName) = "getFullName($event)"
+    (ageOutput) = "getAgeOutput($event)"
+></app-another>
+
+<h2>Full Name: {{fullName}}</h2>
+<h2>Current Age: {{ageOutput}}</h2> -->
+
+
+<!-- <div *ngIf="names.length > 3">
+    <div *ngFor = "let name of names">
+        <app-reusable [name] = "name"></app-reusable>
+    </div>
+    <input type="text" [(ngModel)] = "addedName">
+    <button (click) = "pushAddedName()">Add Name</button>
+</div> -->
+
+<h1>{{title}}</h1>
+<div *ngFor = "let person of persons">
+    <app-reusable [person] = "person" (remove)="delteBtn($event)" >
+    </app-reusable>
+    <button>Update</button>
+</div>
+
+<br>
+<h2>Add New Name</h2>
+<form [formGroup] = "profileGroup" (ngSubmit)=" onSubmit(profileGroup.value)">
+   <label>
+       Last Name :
+       <input type="text" formControlName = "lastName">
+   </label>
+   <br><br>
+   <label>
+        First Name :
+        <input type="text"  formControlName = "firstName">
+    </label>
+    <br><br>
+    <label >
+        Age :
+        <input type="text" formControlName = "age">
+    </label>
+    <br><br>
+    <label >
+        Nationality :
+        <input type="text"  formControlName = "nationality">
+    </label>
+    <br><br>
+    <label for="">
+        Gender :
+        <input type="text" formControlName = "gender">
+    </label>
+    <br><br>
+    <button type="submit" >Add more Name</button>
+</form>
+
+

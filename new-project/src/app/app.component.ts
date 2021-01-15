@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {Person} from './models'
 import {FormControl, FormGroup } from '@angular/forms';
-import { isEmptyExpression } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -9,45 +8,8 @@ import { isEmptyExpression } from '@angular/compiler';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'Rose Marry Goyo !!!';
-  // itemImageUrl = '../assets/haru.jpg';
-  // classes = 'special';
-  // isActive = true;
-  // name = "";
-  // defaultName="Rollie";
-  title = "Directives";
-  // firstNameA = '';
-  // lastNameA= '';
-  // ageA='';
-  // fullName = '';
-  // ageOutput = '';
-  // firstNameA = "Haru";
-  // lastNameA = "Yoshida";
-  // fullName = '';
-  // names = ["Haru", "Yuzan", "Mi-chan", "Mizutani"]
-  // addedName = "";
-  
-// pushAddedName(){
-//   this.names.push(this.addedName);
-//   this.addedName =  "";
-// }
-
-  // compareInput(){
-  //   this.name == this.defaultName ? alert("matched"): alert("mismatched");
-  // }
-  // resetBtn(){
-  //  this.name = "";
-  // }
-  // getFullName(event:Event){
-  //   this.fullName = String(event);
-  // }
-  // getAgeOutput(event:Event){
-  //   this.ageOutput= String(event);
-  // }
-  // name=["Naruto", "Sasuke","Kakashi"];
-
+  title = "Reactive Form";
   //code for adding new name into the array
-
   profileGroup = new FormGroup({
   firstName : new FormControl(''),
   lastName : new FormControl(''),
@@ -71,12 +33,6 @@ export class AppComponent {
     this.profileGroup.reset();
   }
   delteBtn(index: any){
-    // this.persons.splice(this.persons.findIndex(x => x.lastName == index),1);
-    this.persons.splice(this.persons.findIndex(x => x.lastName == index ),1);
+    this.persons.splice(this.persons.findIndex( x => x.lastName == index ),1);
   }
-  // remove(index){
-  //   this.persons.splice(this.persons.findIndex( x => x.firstName == index),1);
-  // }
-
-
 }

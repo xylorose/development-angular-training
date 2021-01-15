@@ -7,10 +7,8 @@ import { Person} from '../models';
   styleUrls: ['./reusable.component.css']
 })
 export class ReusableComponent {
-  // @Input() name = '';
-  // @Input() addedName = "";
   @Input() person:Person;
-  @Output() remove = new EventEmitter();
+  @Output() removePerson = new EventEmitter();
   
 
   isShow = false;
@@ -19,17 +17,7 @@ export class ReusableComponent {
     this.isShow ? this.isShow = false : this.isShow=true;
   }
   delteBtn(){
-    this.remove.emit(this.person.lastName);
-    console.log(this.person.firstName + " " + "is deleted.");
+    this.removePerson.emit(this.person.lastName);
+    console.log(this.person.lastName + " " + this.person.firstName + " " + "is deleted.");
   }
-  // delete( let x = index){
-  //   this.person.splice(x);
-  // }
-  // remove(){
-  //   // this.app.remove(this.person.firstName);
-  //   // console.log(ndex);
-  //   this.lastName
-  // }
- 
-
 }

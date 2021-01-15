@@ -8,6 +8,7 @@ import {AnotherComponent} from './another/another.component';
 import {GoyoComponent} from './goyo/goyo.component';
 import {InlineComponent} from './inline/inline.component';
 import { ReusableComponent } from './reusable/reusable.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReusableComponent } from './reusable/reusable.component';
       AnotherComponent,
       GoyoComponent,
       InlineComponent,
-      ReusableComponent
+      ReusableComponent,
+      UpdateComponent
     ],
     imports: [
       BrowserModule,

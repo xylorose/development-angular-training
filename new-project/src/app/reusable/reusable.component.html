@@ -1,5 +1,7 @@
 <!-- <p>{{name}}</p> -->
-<h2 (click)="click()">{{person.lastName}} {{person.firstName}}</h2>
+<div>
+  <h2 (click)="click()">{{person.lastName}} {{person.firstName}}</h2>
+</div>
 
 <!-- <h2>{{identity.fName}}</h2> -->
 
@@ -7,7 +9,7 @@
   <p>Last Name: {{person.lastName}}</p>
   <p>First Name: {{person.firstName}}</p>
   <p>Age: {{person.age}} </p>
-  <p *ngIf = "person.nationality" >Nationality: {{person.nationality}}</p>
+  <p *ngIf = "person.nationality != '' ">Nationality: {{person.nationality}}</p>
   <p>Gender: {{person.gender}}</p>
   <!-- <input type="button">Delete</type> -->
 <button (click)="delteBtn()">Delete</button> 

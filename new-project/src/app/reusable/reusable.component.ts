@@ -9,10 +9,10 @@ import { Person} from '../models';
 export class ReusableComponent {
   @Input() person:Person;
   @Output() removePerson = new EventEmitter();
+  @Output() updatePerson = new EventEmitter();
   
 
   isShow = false;
-
   click(){
     this.isShow ? this.isShow = false : this.isShow=true;
   }
@@ -20,4 +20,9 @@ export class ReusableComponent {
     this.removePerson.emit(this.person.lastName);
     console.log(this.person.lastName + " " + this.person.firstName + " " + "is deleted.");
   }
+  updateBtn(){
+    this.updatePerson.emit(this.person.lastName);
+    console.log(this.person);
+  }
+  
 }

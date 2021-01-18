@@ -1,8 +1,15 @@
 <h1>{{title}}</h1>
-<div *ngFor = "let person of persons">
-    <app-reusable [person] = "person" (removePerson)="delteBtn($event)" >
-    </app-reusable>
+<div *ngIf = "!show">
+    <div *ngFor = "let person of persons">
+        <app-reusable [person] = "person" (removePerson)="delteBtn($event)" (updatePerson)= "updateBtn($event)">
+        </app-reusable>
+    </div>
 </div>
+
+<div>
+    <app-update *ngIf = "show"></app-update>
+</div>
+
 
 <br>
 <h2>Add New Name</h2>

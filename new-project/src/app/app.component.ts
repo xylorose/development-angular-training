@@ -35,4 +35,14 @@ export class AppComponent {
   delteBtn(index: any){
     this.persons.splice(this.persons.findIndex( x => x.lastName == index ),1);
   }
+  
+  show = false;
+  updateBtn(){
+    this.show ? this.show = false : this.show = true;
+  }
+  sendUpdate(updtInfo: any){
+    this.persons.push(updtInfo);
+    console.log(updtInfo);
+  }
+  
 }

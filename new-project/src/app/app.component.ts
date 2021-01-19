@@ -40,9 +40,12 @@ export class AppComponent {
   updateBtn(){
     this.show ? this.show = false : this.show = true;
   }
+
   sendUpdate(updtInfo: any){
     this.persons.push(updtInfo);
     console.log(updtInfo);
   }
-  
+//  cancelUpdate(cancel : Event){
+//    this.show ? this.show = false: this.show = true;
+//  }
 }

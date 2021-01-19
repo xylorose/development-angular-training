@@ -1,13 +1,14 @@
 <h1>{{title}}</h1>
 <div *ngIf = "!show">
-    <div *ngFor = "let person of persons">
+    <div *ngFor = "let person of persons" class="card">
         <app-reusable [person] = "person" (removePerson)="delteBtn($event)" (updatePerson)= "updateBtn($event)">
         </app-reusable>
     </div>
 </div>
 
 <div>
-    <app-update *ngIf = "show"></app-update>
+    <app-update *ngIf = "show" ></app-update>
+    <!-- (emitCancelBtn) ="cancelUpdate($event)" -->
 </div>
 
 

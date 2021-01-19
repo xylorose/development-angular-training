@@ -17,10 +17,17 @@ export class UpdateComponent{
 
   @Output() updatePerson = new EventEmitter();
   @Output() sendUpdatedInfo = new EventEmitter();
-
+  @Output() emitCancelBtn = new EventEmitter();
  
   sendUpdate(){
     this.sendUpdatedInfo.emit(this.persons.lastName)
   }
+  onSubmit(){
+    console.log(this.persons.lastName);
+    // alert("here!");
+  }
 
+  // cancelUpdate(persons: any){
+  //   this.emitCancelBtn.emit(this.persons)
+  // }
 }

@@ -16,8 +16,15 @@ export class ApiComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('onInit');
-    this
+    this.getUser().subscribe( users =>{
+      console.log(users);
+      this.users = users as Users[];
+    })
 
+  }
+
+  getUser(){
+    return this.http.get(this.url);
   }
 }
 
@@ -31,8 +38,10 @@ export interface Users{
     suite: string;
     city: string;
     zipcode: string;
-    lat: number;
-    lng: number;
+    geo:{
+      lat: number;
+      lng: number;
+    }
   }];
   phone: number;
   website: string;

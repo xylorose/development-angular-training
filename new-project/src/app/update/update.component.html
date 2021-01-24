@@ -1,38 +1,38 @@
 <div class="card" style="width:18rem">
-    <form class="form-group mr-5" #contactForm = "ngForm" (ngSubmit) = "onSubmit()">
-        <div>
-            <label for="lastName">
-                Last Name: 
-            </label>
-            <input type="text" class="form-control" id="lastName"  name="lastName">
-        </div>
-        <div>
-            <label for="firstName">
-                First Name: 
-            </label>
-            <input type="text" class="form-control" id="firstName"  name="firstName">
-        </div>
-        <div>
-            <label for="age">
-                Age: 
-            </label>
-            <input type="text" class="form-control" id="age"  name="age">
-        </div>
-        <div>
-            <label for="nationality">
-                Nationality: 
-            </label>
-            <input type="text" class="form-control" id="nationality"  name="nationality">
-        </div>
-        <div>
-            <label for="gender">
-                Gender: 
-            </label>
-            <input type="text" class="form-control" id="gender"  name="gender">
-        </div>
-        <br><br>
-        <button  type = "submit" class = "btn btn-primary" (click)="updatInfo()" >Update</button>
-        <button  type = "button" class = "btn btn-primary" (click)="cancelUpdate()" >Cancel</button>
+  <form class="form-group pl-5 mr-5" #updatedForm="ngForm" (ngSubmit)="onSubmit(updatedForm.value)">
+    <div class="form-group">
+      <label for="lastName">
+        Last Name:
+      </label>
+      <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="lastName">
+    </div>
+    <div class="form-group">
+      <label for="firstName">
+        First Name:
+      </label>
+      <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="firstName">
+    </div>
+    <div class="form-group">
+      <label for="age">
+        Age:
+      </label>
+      <input type="text" class="form-control" id="age" name="age" [(ngModel)]="age">
+    </div>
+    <div class="form-group">
+      <label for="nationality">
+        Nationality:
+      </label>
+      <input type="text" class="form-control" id="nationality" name="nationality" [(ngModel)]="nationality">
+    </div>
+    <div class="form-group">
+      <label for="gender">
+        Gender:
+      </label>
+      <input type="text" class="form-control" id="gender" name="gender" [(ngModel)]="gender">
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-primary mr-4">Update</button>
+    <button type="submit" class="btn btn-danger"  (click) = "cancelUpdate()">Cancel</button>
+  </form>
 
-    </form>
 </div>

@@ -21,8 +21,8 @@ export class ReusableComponent {
     console.log(this.person.lastName + " " + this.person.firstName + " " + "is deleted.");
   }
   updateBtn(){
-    this.updatePerson.emit(this.person.lastName);
-    console.log(this.person);
+    this.updatePerson.emit(this.person);
+    console.log(this.person, "naCLICK");
   }
   
 }

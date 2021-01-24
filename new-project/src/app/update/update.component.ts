@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {Router} from '@angular/router';
 import {Person} from '../models';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-update',
@@ -15,19 +17,23 @@ export class UpdateComponent{
   @Input() nationality = "";
   @Input() gender = "";
 
-  @Output() updatePerson = new EventEmitter();
-  @Output() sendUpdatedInfo = new EventEmitter();
+
+
+  // @Output() sendUpdatedInfo = new EventEmitter();
   @Output() emitCancelBtn = new EventEmitter();
+  @Output() updated = new EventEmitter();
+
+  display = false;
+  constructor(private router:Router){}
  
-  sendUpdate(){
-    this.sendUpdatedInfo.emit(this.persons.lastName)
-  }
-  onSubmit(){
-    console.log(this.persons.lastName);
-    // alert("here!");
+
+  onSubmit(data: Person){
+    this.updated.emit(data);
+    console.log("onsubmit");
   }
 
-  // cancelUpdate(persons: any){
-  //   this.emitCancelBtn.emit(this.persons)
-  // }
-}
+  cancelUpdate(){
+    this.display ? this.display = false : this.display = true;
+    console.log("balik sa resuable!");
+  } 
+} 

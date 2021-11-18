@@ -1,0 +1,45 @@
+ <h1>{{title}}</h1>
+<div *ngIf = "!show">
+    <div *ngFor = "let person of persons" class="card">
+        <app-reusable [person] = "person" (removePerson)="delteBtn($event)" (updatePerson)= "updateBtn($event)">
+        </app-reusable>
+    </div>
+</div>
+
+<div>
+    <app-update *ngIf = "show" [firstName] = "ndx.firstName" [lastName] = "ndx.lastName" [age] = "ndx.age" [nationality] = "ndx.nationality" [gender] = "ndx.gender" (emitCancelBtn) ="cancelUpdate($event)" (updated)="onSubmit($event)"></app-update>
+</div>
+
+
+<br>
+<h2>Add New Name</h2>
+<form [formGroup] = "profileGroup" (ngSubmit)="onSubmit(profileGroup.value)">
+   <label>
+       Last Name :
+       <input formControlName = "lastName">
+   </label>
+   <br><br>
+   <label>
+        First Name :
+        <input  formControlName = "firstName">
+    </label>
+    <br><br>
+    <label >
+        Age :
+        <input formControlName = "age">
+    </label>
+    <br><br>
+    <label >
+        Nationality :
+        <input formControlName = "nationality">
+    </label>
+    <br><br>
+    <label>
+        Gender :
+        <input formControlName = "gender">
+    </label>
+    <br><br>
+    <button type="submit">Add more Name</button>
+</form>
+
+ <!-- <app-api></app-api> -->

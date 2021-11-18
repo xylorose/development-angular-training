@@ -1,0 +1,40 @@
+<h1>API</h1>
+<div *ngFor = "let user of users">
+    <div class="users">
+        <label> Name: </label> 
+        <p>{{user.name}}</p>
+        <label> Username: </label> 
+        <p>{{user.username}}</p>
+        <label>Address; </label>
+        <div class="space">
+            <label>Street: </label>
+            <p>{{user.address.street}}</p>
+            <label>Suite: </label>
+            <p>{{user.address.suite}}</p>
+            <label>City: </label>
+            <p>{{user.address.city}}</p>
+            <label>Zipcode: </label>
+            <p>{{user.address.zipcode}}</p>
+            <label>Lattitude: </label>
+            <p>{{user.address.geo.lat}}</p>
+            <label>Longitude: </label>
+            <p>{{user.address.geo.lng}}</p>
+        </div>
+        <label>Phone:</label>
+        <p>{{user.phone}}</p>
+        <label>Website:</label>
+        <p>{{user.website}}</p>
+        <label>Company;</label>
+        <div class="space">
+            <label>Name: </label>
+            <p>{{user.company.name}}</p>
+            <label>Catch Phrase: </label>
+            <p>{{user.company.catchPhrase}}</p>
+            <label>BS: </label>
+            <p>{{user.company.bs}}</p>
+        </div>
+    <br>
+    </div>
+    
+    
+</div>
